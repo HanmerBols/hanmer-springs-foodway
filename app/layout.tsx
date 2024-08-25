@@ -1,9 +1,7 @@
 import type { Metadata } from "next";
-import { Do_Hyeon } from "next/font/google";
-import "./globals.css";
 import { WEBSITE_DESCRIPTION, WEBSITE_TITLE } from "./content";
-
-const doHyeon = Do_Hyeon({ subsets: ["latin"], weight: "400" });
+import "./globals.css";
+import { PRIMARY_FONT } from "./lib/fonts";
 
 export const metadata: Metadata = {
   title: WEBSITE_TITLE,
@@ -17,7 +15,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={doHyeon.className}>{children}</body>
+      <body className={PRIMARY_FONT.className}>{children}</body>
     </html>
   );
 }
