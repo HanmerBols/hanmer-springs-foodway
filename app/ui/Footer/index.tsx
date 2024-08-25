@@ -1,3 +1,4 @@
+import { COPYRIGHT_TEXT } from "@/app/content";
 import { useMobileDetection } from "@/app/lib/hooks/useMobileDetection";
 import styles from "./index.module.css";
 
@@ -15,5 +16,5 @@ const Footer = () => {
 export default Footer;
 
 const Copyright = () => {
-  return <div>© Hanmer Foodway 2024.</div>;
+  return <div>{COPYRIGHT_TEXT}</div>;
 };

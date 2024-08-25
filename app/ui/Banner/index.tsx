@@ -1,7 +1,8 @@
 "use client";
 
+import { BANNER_SUBTITLE, BANNER_TITLE } from "@/app/content";
+import { useMobileDetection } from "@/app/lib/hooks/useMobileDetection";
 import Image from "next/image";
-import { useMobileDetection } from "../../lib/hooks/useMobileDetection";
 import styles from "./index.module.css";
 
 const Banner = () => {
@@ -54,10 +55,10 @@ const BannerOverlay = () => {
     <div className={`${styles.overlay} ${desktopOrMobileStyles}`}>
       <div className={`${styles.text} ${desktopOrMobileStyles}`}>
         <h1 className={`${styles.title} ${desktopOrMobileStyles}`}>
-          Enjoy Food Your Way.
+          {BANNER_TITLE}
         </h1>
         <p className={`${styles.subtitle} ${desktopOrMobileStyles}`}>
-          Wide selection of noodles and food bowls,<br />crafted to your taste.
+          {BANNER_SUBTITLE}
         </p>
       </div>
     </div>
