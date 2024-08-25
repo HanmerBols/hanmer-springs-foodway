@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "./order_button.module.css";
+import styles from "./index.module.css";
 
 const OrderButton = () => {
   return (

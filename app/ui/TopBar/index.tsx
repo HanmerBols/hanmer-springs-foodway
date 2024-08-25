@@ -1,10 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import { useMobileDetection } from "../lib/hooks/useMobileDetection";
-import OrderButton from "./OrderButton";
-import styles from "./top_bar.module.css";
-import WeeklySaleButton from "./WeeklySaleButton";
+import { useMobileDetection } from "../../lib/hooks/useMobileDetection";
+import OrderButton from "../OrderButton";
+import WeeklySaleButton from "../WeeklySaleButton";
+import styles from "./index.module.css";
 
 const TopBar = () => {
   const isMobile = useMobileDetection();

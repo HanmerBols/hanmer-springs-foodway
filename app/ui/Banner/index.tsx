@@ -1,8 +1,8 @@
 "use client";
 
 import Image from "next/image";
-import { useMobileDetection } from "../lib/hooks/useMobileDetection";
-import styles from "./banner.module.css";
+import { useMobileDetection } from "../../lib/hooks/useMobileDetection";
+import styles from "./index.module.css";
 
 const Banner = () => {
   const isMobile = useMobileDetection();

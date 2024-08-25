@@ -1,6 +1,6 @@
-import styles from "./bottom_bar.module.css";
-import OrderButton from "./OrderButton";
-import WeeklySaleButton from "./WeeklySaleButton";
+import OrderButton from "../OrderButton";
+import WeeklySaleButton from "../WeeklySaleButton";
+import styles from "./index.module.css";
 
 const BottomBar = () => {
   return (
