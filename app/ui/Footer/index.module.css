@@ -1,0 +1,17 @@
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-top: 1px solid var(--secondary-color);
+}
+.footer.desktop {
+  gap: 24px;
+  width: calc(100% - 160px);
+  padding: 80px;
+}
+.footer.mobile {
+  gap: 20px;
+  width: calc(100% - 40px);
+  padding: 40px 20px 140px 20px;
+}
