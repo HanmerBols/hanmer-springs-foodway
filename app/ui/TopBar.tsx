@@ -1,10 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import styles from "./top_bar.module.css";
-import Link from "next/link";
-import { WeeklySaleIcon } from "./CustomIcons";
 import { useMobileDetection } from "../lib/hooks/useMobileDetection";
+import OrderButton from "./OrderButton";
+import styles from "./top_bar.module.css";
+import WeeklySaleButton from "./WeeklySaleButton";
 
 const TopBar = () => {
   const isMobile = useMobileDetection();
@@ -22,8 +22,8 @@ const TopBar = () => {
 export default TopBar;
 
 const Logo = () => {
-    const isMobile = useMobileDetection();
-    const desktopOrMobileStyles = isMobile ? styles.mobile : styles.desktop;
+  const isMobile = useMobileDetection();
+  const desktopOrMobileStyles = isMobile ? styles.mobile : styles.desktop;
 
   return (
     <Image
@@ -42,21 +42,5 @@ const Buttons = () => {
       <WeeklySaleButton />
       <OrderButton />
     </div>
-  );
-};
-
-const WeeklySaleButton = () => {
-  return (
-    <Link href="" className={styles.weekly_sale_button}>
-      <WeeklySaleIcon /> Weekly Sale!
-    </Link>
-  );
-};
-
-const OrderButton = () => {
-  return (
-    <Link href="" className={styles.order_button}>
-      Order Now
-    </Link>
   );
 };

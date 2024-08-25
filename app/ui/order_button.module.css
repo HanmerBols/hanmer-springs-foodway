@@ -1,0 +1,19 @@
+.order_button {
+  display: flex;
+  padding: 8px 36px;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  align-self: stretch;
+
+  border-radius: 12px;
+  border: 3px solid #061023;
+  background: #061023;
+
+  color: white;
+
+  &:hover {
+    border: 3px solid #fb5b53;
+    box-shadow: 0px 4px 20px 4px rgba(60, 37, 32, 0.08);
+  }
+}

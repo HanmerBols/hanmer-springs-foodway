@@ -1,4 +1,17 @@
-export const WeeklySaleIcon = () => {
+import Link from "next/link";
+import styles from "./weekly_sale_button.module.css";
+
+const WeeklySaleButton = () => {
+  return (
+    <Link href="" className={styles.weekly_sale_button}>
+      <WeeklySaleIcon /> Weekly Sale!
+    </Link>
+  );
+};
+
+export default WeeklySaleButton;
+
+const WeeklySaleIcon = () => {
   return (
     <svg
       width="20"
