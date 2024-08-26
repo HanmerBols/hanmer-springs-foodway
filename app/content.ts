@@ -95,4 +95,4 @@ export const ENQUIRIES_TEXT = "For enquiries, reach out to us at";
 export const EMAIL_ADDRESS = "hanmerbols@gmail.com";
 export const PHONE_NUMBER = "021 086 727 93";
 
-export const COPYRIGHT_TEXT = "© Hanmer Foodway 2024.";
+export const COPYRIGHT_TEXT = "Hanmer Foodway 2024.";

@@ -1,6 +1,8 @@
 import { COPYRIGHT_TEXT } from "@/app/content";
 import { useMobileDetection } from "@/app/lib/hooks/useMobileDetection";
 import styles from "./index.module.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCopyright } from "@fortawesome/free-regular-svg-icons";
 
 const Footer = () => {
   const isMobile = useMobileDetection();
@@ -16,5 +18,9 @@ const Footer = () => {
 export default Footer;
 
 const Copyright = () => {
-  return <div>{COPYRIGHT_TEXT}</div>;
+  return (
+    <div>
+      <FontAwesomeIcon icon={faCopyright} /> {COPYRIGHT_TEXT}
+    </div>
+  );
 };

@@ -32,6 +32,8 @@ import Footer from "./ui/Footer";
 import Header from "./ui/Header";
 import Subheader from "./ui/Subheader";
 import TopBar from "./ui/TopBar";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
 
 const LandingPage = () => {
   const isMobile = useMobileDetection();
@@ -358,13 +360,13 @@ const ContactDetails = () => {
           className={`${styles.contact_method} ${desktopOrMobileStyles}`}
           href={`mailto:${EMAIL_ADDRESS}`}
         >
-          {EMAIL_ADDRESS}
+          <FontAwesomeIcon icon={faEnvelope} /> {EMAIL_ADDRESS}
         </a>
         <a
           className={`${styles.contact_method} ${desktopOrMobileStyles}`}
           href={`tel:${PHONE_NUMBER}`}
         >
-          {PHONE_NUMBER}
+          <FontAwesomeIcon icon={faPhone} /> {PHONE_NUMBER}
         </a>
       </div>
     </div>
