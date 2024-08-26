@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { Ref, RefObject, useRef, useState } from "react";
 import {
   ADD_TO_CART_TEXT,
   ADDRESS,
@@ -33,7 +33,12 @@ import Header from "./ui/Header";
 import Subheader from "./ui/Subheader";
 import TopBar from "./ui/TopBar";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faEnvelope, faPhone } from "@fortawesome/free-solid-svg-icons";
+import {
+  faChevronLeft,
+  faChevronRight,
+  faEnvelope,
+  faPhone,
+} from "@fortawesome/free-solid-svg-icons";
 
 const LandingPage = () => {
   const isMobile = useMobileDetection();
@@ -174,36 +179,54 @@ const AllTabContent = ({ selectedDay }: AllTabContentProps) => {
   const isMobile = useMobileDetection();
   const desktopOrMobileStyles = isMobile ? styles.mobile : styles.desktop;
 
+  const ref = useRef<HTMLDivElement>(null);
+  const scrollLeft = () =>
+    ref.current?.scrollBy(-DAILY_SPECIAL_SCROLL_AMOUNT, 0);
+  const scrollRight = () =>
+    ref.current?.scrollBy(DAILY_SPECIAL_SCROLL_AMOUNT, 0);
+
   return (
-    <div className={`${styles.all_tab_content} ${desktopOrMobileStyles}`}>
+    <div
+      ref={ref}
+      className={`${styles.all_tab_content} ${desktopOrMobileStyles}`}
+    >
       {DAYS_OF_THE_WEEK.map((dayOfTheWeek) => (
-        <TabContent dayOfTheWeek={dayOfTheWeek} selectedDay={selectedDay} />
+        <TabContent
+          dayOfTheWeek={dayOfTheWeek}
+          selectedDay={selectedDay}
+          scrollLeft={scrollLeft}
+          scrollRight={scrollRight}
+        />
       ))}
     </div>
   );
 };
 
 type TabContentProps = {
-  dayOfTheWeek: DayOfTheWeek;
   selectedDay: string;
+  dayOfTheWeek: DayOfTheWeek;
+  scrollLeft: () => void;
+  scrollRight: () => void;
 };
 
-const TabContent = ({ dayOfTheWeek, selectedDay }: TabContentProps) => {
+const TabContent = (props: TabContentProps) => {
   const isMobile = useMobileDetection();
+
+  const { dayOfTheWeek, selectedDay } = props;
   const tabContentClassName = constructTabContentClassName(
     isMobile,
     dayOfTheWeek,
     selectedDay
   );
 
-  const dailySpecial = DAILY_SPECIALS[dayOfTheWeek];
-
   return (
     <div className={tabContentClassName}>
-      <DailySpecialCard dailySpecial={dailySpecial} />
+      <DailySpecialCard {...props} />
     </div>
   );
 };
+
+const DAILY_SPECIAL_SCROLL_AMOUNT = 400;
 
 const constructTabContentClassName = (
   isMobile: boolean,
@@ -222,15 +245,22 @@ const constructTabContentClassName = (
 };
 
 type DailySpecialCardProps = {
-  dailySpecial: DailySpecial;
+  dayOfTheWeek: DayOfTheWeek;
+  scrollLeft: () => void;
+  scrollRight: () => void;
 };
 
-const DailySpecialCard = ({ dailySpecial }: DailySpecialCardProps) => {
+const DailySpecialCard = (props: DailySpecialCardProps) => {
   const isMobile = useMobileDetection();
   const desktopOrMobileStyles = isMobile ? styles.mobile : styles.desktop;
 
+  const { dayOfTheWeek } = props;
+  const dailySpecial = DAILY_SPECIALS[dayOfTheWeek];
+
   return (
     <div className={`${styles.special_card} ${desktopOrMobileStyles}`}>
+      {isMobile ? <SpecialNav {...props} /> : <></>}
+
       <Image
         className={`${styles.special_image} ${desktopOrMobileStyles}`}
         src={dailySpecial.imagePath}
@@ -242,6 +272,62 @@ const DailySpecialCard = ({ dailySpecial }: DailySpecialCardProps) => {
       <DailySpecialText dailySpecial={dailySpecial} />
     </div>
   );
+};
+
+type SpecialNavProps = {
+  dayOfTheWeek: DayOfTheWeek;
+  scrollLeft: () => void;
+  scrollRight: () => void;
+};
+
+const SpecialNav = ({
+  dayOfTheWeek,
+  scrollLeft,
+  scrollRight,
+}: SpecialNavProps) => {
+  return (
+    <nav className={styles.special_nav}>
+      {dayOfTheWeek === FIRST_DAY_OF_THE_WEEK ? (
+        <SpecialNavButton />
+      ) : (
+        <SpecialNavButton scrollLeft={scrollLeft} />
+      )}
+
+      <div className={styles.day_of_the_week}>{dayOfTheWeek}</div>
+
+      {dayOfTheWeek === LAST_DAY_OF_THE_WEEK ? (
+        <SpecialNavButton />
+      ) : (
+        <SpecialNavButton scrollRight={scrollRight} />
+      )}
+    </nav>
+  );
+};
+
+type SpecialNavButtonProps = {
+  scrollLeft?: () => void;
+  scrollRight?: () => void;
+};
+
+const SpecialNavButton = ({
+  scrollLeft,
+  scrollRight,
+}: SpecialNavButtonProps) => {
+  if (scrollLeft) {
+    return (
+      <button className={styles.special_nav_button} onClick={scrollLeft}>
+        <FontAwesomeIcon icon={faChevronLeft} />
+      </button>
+    );
+  } else if (scrollRight) {
+    return (
+      <button className={styles.special_nav_button} onClick={scrollRight}>
+        <FontAwesomeIcon icon={faChevronRight} />
+      </button>
+    );
+  } else {
+    return <button className={styles.special_nav_button}></button>;
+  }
 };
 
 type DailySpecialTextProps = {

@@ -166,10 +166,10 @@
   scroll-behavior: smooth;
 }
 
-.tab_content {
+.tab_content.desktop {
   display: none;
 }
-.tab_content.selected {
+.tab_content.desktop.selected {
   display: block;
 }
 .tab_content.mobile {
@@ -212,6 +212,30 @@
   border-radius: 20px;
 
   margin: 0px auto;
+}
+
+.special_nav {
+  display: flex;
+  justify-content: space-between;
+  width: calc(100% - 16px);
+}
+
+.day_of_the_week {
+  display: flex;
+  align-items: center;
+}
+
+.special_nav_button {
+  display: flex;
+  width: 32px;
+  height: 32px;
+  padding: 4px;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 100px;
+  border: 1px solid white;
+  background: white;
 }
 
 .special_image {
