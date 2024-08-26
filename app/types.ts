@@ -1,3 +1,13 @@
+export type Category =
+  | "Noodles"
+  | "Bols"
+  | "Quick Bites"
+  | "Groceries & Snacks";
+
+export type CategoryClassNames = {
+  [category in Category]: string;
+};
+
 export type DayOfTheWeek =
   | "Monday"
   | "Tuesday"

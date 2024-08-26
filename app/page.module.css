@@ -104,6 +104,105 @@
   font-size: 16px;
 }
 
+.introduction {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.introduction.desktop {
+  gap: 20px;
+}
+.introduction.mobile {
+  gap: 8px;
+}
+
+.intro_first_line.desktop {
+  font-size: 24px;
+}
+.intro_first_line.mobile {
+  font-size: 18px;
+}
+
+.intro_second_line.desktop {
+  font-size: 48px;
+}
+.intro_second_line.mobile {
+  font-size: 24px;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+.categories.desktop {
+  gap: 20px;
+}
+.categories.mobile {
+  gap: 8px;
+}
+
+.category {
+  display: flex;
+  align-items: center;
+  border-radius: 20px;
+}
+.category.desktop {
+  width: 300px;
+  height: 300px;
+}
+.category.mobile {
+  width: 172px;
+  height: 172px;
+}
+.noodles {
+  background: url(/landing_page/categories/noodles.png) lightgray 50% / cover
+    no-repeat;
+}
+.bols {
+  background: url(/landing_page/categories/bols.png) lightgray 50% / cover
+    no-repeat;
+}
+.quick_bites {
+  background: url(/landing_page/categories/quick_bites.png) lightgray 50% /
+    cover no-repeat;
+}
+.groceries_and_snacks {
+  background: url(/landing_page/categories/groceries_and_snacks.png) lightgray
+    50% / cover no-repeat;
+}
+
+.category_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+
+  text-align: center;
+  color: white;
+
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 20px;
+
+  /* Elevation/Md */
+  text-shadow:
+    0px 0px 4px rgba(60, 37, 32, 0.8),
+    0px 4px 40px rgba(100, 82, 78, 0.6);
+}
+.category_text.desktop {
+  font-size: 40px;
+  width: 300px;
+  height: 300px;
+}
+.category_text.mobile {
+  font-size: 32px;
+  width: 172px;
+  height: 172px;
+}
+
 .daily_specials {
   display: flex;
   flex-direction: column;
@@ -111,11 +210,9 @@
 }
 .daily_specials.desktop {
   gap: 40px;
-  padding: 40px 0px;
 }
 .daily_specials.mobile {
   gap: 20px;
-  padding: 0;
   margin: auto;
   width: 100%;
 }
@@ -343,11 +440,9 @@
 }
 .location.desktop {
   gap: 60px;
-  padding: 40px 0px;
 }
 .location.mobile {
   gap: 20px;
-  padding: 20px 0px;
 }
 
 .location_content {

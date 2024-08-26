@@ -1,13 +1,22 @@
 "use client";
 
+import {
+  faChevronLeft,
+  faChevronRight,
+  faEnvelope,
+  faPhone,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
-import { Ref, RefObject, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import {
   ADD_TO_CART_TEXT,
   ADDRESS,
   BANNER_SUBTITLE,
   BANNER_TITLE,
+  CATEGORIES,
+  CATEGORY_CLASS_NAMES,
   DAILY_SPECIALS,
   DAILY_SPECIALS_HEADER,
   DAILY_SPECIALS_SUBHEADER,
@@ -15,6 +24,8 @@ import {
   EMAIL_ADDRESS,
   ENQUIRIES_TEXT,
   FIRST_DAY_OF_THE_WEEK,
+  INTRO_FIRST_LINE,
+  INTRO_SECOND_LINE,
   LAST_DAY_OF_THE_WEEK,
   LOCATION_DESCRIPTION,
   LOCATION_HEADER,
@@ -32,13 +43,6 @@ import Footer from "./ui/Footer";
 import Header from "./ui/Header";
 import Subheader from "./ui/Subheader";
 import TopBar from "./ui/TopBar";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faChevronLeft,
-  faChevronRight,
-  faEnvelope,
-  faPhone,
-} from "@fortawesome/free-solid-svg-icons";
 
 const LandingPage = () => {
   const isMobile = useMobileDetection();
@@ -49,6 +53,8 @@ const LandingPage = () => {
       <TopBar />
       <main className={`${styles.content} ${desktopOrMobileStyles}`}>
         <Banner />
+        <Introduction />
+        <Categories />
         <DailySpecials />
         <Location />
       </main>
@@ -117,6 +123,43 @@ const BannerOverlay = () => {
         </p>
       </div>
     </div>
+  );
+};
+
+const Introduction = () => {
+  const isMobile = useMobileDetection();
+  const desktopOrMobileStyles = isMobile ? styles.mobile : styles.desktop;
+
+  return (
+    <div className={`${styles.introduction} ${desktopOrMobileStyles}`}>
+      <p className={`${styles.intro_first_line} ${desktopOrMobileStyles}`}>
+        {INTRO_FIRST_LINE}
+      </p>
+      <h1 className={`${styles.intro_second_line} ${desktopOrMobileStyles}`}>
+        {INTRO_SECOND_LINE}
+      </h1>
+    </div>
+  );
+};
+
+const Categories = () => {
+  const isMobile = useMobileDetection();
+  const desktopOrMobileStyles = isMobile ? styles.mobile : styles.desktop;
+
+  return (
+    <nav className={`${styles.categories} ${desktopOrMobileStyles}`}>
+      {CATEGORIES.map((category) => (
+        <Link
+          key={category}
+          href=""
+          className={`${styles.category} ${desktopOrMobileStyles} ${styles[CATEGORY_CLASS_NAMES[category]]}`}
+        >
+          <div className={`${styles.category_text} ${desktopOrMobileStyles}`}>
+            {category}
+          </div>
+        </Link>
+      ))}
+    </nav>
   );
 };
 
