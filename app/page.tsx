@@ -192,6 +192,7 @@ const AllTabContent = ({ selectedDay }: AllTabContentProps) => {
     >
       {DAYS_OF_THE_WEEK.map((dayOfTheWeek) => (
         <TabContent
+          key={`${dayOfTheWeek}-special`}
           dayOfTheWeek={dayOfTheWeek}
           selectedDay={selectedDay}
           scrollLeft={scrollLeft}
@@ -216,7 +217,7 @@ const TabContent = (props: TabContentProps) => {
   const tabContentClassName = constructTabContentClassName(
     isMobile,
     dayOfTheWeek,
-    selectedDay
+    selectedDay,
   );
 
   return (
@@ -231,7 +232,7 @@ const DAILY_SPECIAL_SCROLL_AMOUNT = 400;
 const constructTabContentClassName = (
   isMobile: boolean,
   dayOfTheWeek: DayOfTheWeek,
-  selectedDay: string
+  selectedDay: string,
 ) => {
   const desktopOrMobileStyles = isMobile ? styles.mobile : styles.desktop;
   const selectedStyles = dayOfTheWeek === selectedDay ? styles.selected : "";
