@@ -1,7 +1,10 @@
 "use client";
 
+import Image from "next/image";
 import {
   ADDRESS,
+  BANNER_SUBTITLE,
+  BANNER_TITLE,
   EMAIL_ADDRESS,
   ENQUIRIES_TEXT,
   LOCATION_DESCRIPTION,
@@ -12,7 +15,6 @@ import {
 import { SECONDARY_FONT } from "./lib/fonts";
 import { useMobileDetection } from "./lib/hooks/useMobileDetection";
 import styles from "./page.module.css";
-import Banner from "./ui/Banner";
 import BottomBar from "./ui/BottomBar";
 import Footer from "./ui/Footer";
 import TopBar from "./ui/TopBar";
@@ -26,7 +28,6 @@ const LandingPage = () => {
       <TopBar />
       <main className={`${styles.content} ${desktopOrMobileStyles}`}>
         <Banner />
-        <div>TODO</div>
         <Location />
       </main>
       <Footer />
@@ -36,6 +37,66 @@ const LandingPage = () => {
 };
 
 export default LandingPage;
+
+const Banner = () => {
+  const isMobile = useMobileDetection();
+  const desktopOrMobileStyles = isMobile ? styles.mobile : styles.desktop;
+
+  return (
+    <div className={`${styles.banner_container} ${desktopOrMobileStyles}`}>
+      {isMobile ? <MobileBanner /> : <DesktopBanner />}
+      <BannerOverlay />
+    </div>
+  );
+};
+
+const DesktopBanner = () => {
+  return (
+    <video
+      className={`${styles.banner} ${styles.desktop}`}
+      playsInline
+      autoPlay
+      muted
+      loop
+    >
+      <source src="/landing_page/banner_desktop.webm" type="video/mp4" />
+      Your browser does not support the videos.
+    </video>
+  );
+};
+
+const MobileBanner = () => {
+  return (
+    <Image
+      className={`${styles.banner} ${styles.mobile}`}
+      src="/landing_page/banner_mobile.png"
+      alt="Enjoy food your way"
+      width={390}
+      height={240}
+      priority
+    />
+  );
+};
+
+const BannerOverlay = () => {
+  const isMobile = useMobileDetection();
+  const desktopOrMobileStyles = isMobile ? styles.mobile : styles.desktop;
+
+  return (
+    <div className={`${styles.banner_overlay} ${desktopOrMobileStyles}`}>
+      <div className={`${styles.banner_text} ${desktopOrMobileStyles}`}>
+        <h1 className={`${styles.banner_title} ${desktopOrMobileStyles}`}>
+          {BANNER_TITLE}
+        </h1>
+        <p
+          className={`${styles.banner_subtitle} ${desktopOrMobileStyles} ${SECONDARY_FONT.className}`}
+        >
+          {BANNER_SUBTITLE}
+        </p>
+      </div>
+    </div>
+  );
+};
 
 const Location = () => {
   const isMobile = useMobileDetection();
