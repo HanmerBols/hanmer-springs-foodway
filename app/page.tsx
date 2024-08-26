@@ -1,22 +1,36 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
 import {
+  ADD_TO_CART_TEXT,
   ADDRESS,
   BANNER_SUBTITLE,
   BANNER_TITLE,
+  DAILY_SPECIALS,
+  DAILY_SPECIALS_HEADER,
+  DAILY_SPECIALS_SUBHEADER,
+  DAYS_OF_THE_WEEK,
   EMAIL_ADDRESS,
   ENQUIRIES_TEXT,
+  FIRST_DAY_OF_THE_WEEK,
+  LAST_DAY_OF_THE_WEEK,
   LOCATION_DESCRIPTION,
   LOCATION_HEADER,
   OPENING_HOURS,
   PHONE_NUMBER,
+  REGULAR_PRICE_TEXT,
 } from "./content";
+import { getTodaysDayOfTheWeek } from "./lib/dates";
 import { SECONDARY_FONT } from "./lib/fonts";
 import { useMobileDetection } from "./lib/hooks/useMobileDetection";
 import styles from "./page.module.css";
+import { DailySpecial, DayOfTheWeek } from "./types";
 import BottomBar from "./ui/BottomBar";
 import Footer from "./ui/Footer";
+import Header from "./ui/Header";
+import Subheader from "./ui/Subheader";
 import TopBar from "./ui/TopBar";
 
 const LandingPage = () => {
@@ -28,6 +42,7 @@ const LandingPage = () => {
       <TopBar />
       <main className={`${styles.content} ${desktopOrMobileStyles}`}>
         <Banner />
+        <DailySpecials />
         <Location />
       </main>
       <Footer />
@@ -98,6 +113,176 @@ const BannerOverlay = () => {
   );
 };
 
+const DailySpecials = () => {
+  const isMobile = useMobileDetection();
+  const desktopOrMobileStyles = isMobile ? styles.mobile : styles.desktop;
+
+  const [selectedDay, setSelectedDay] = useState(getTodaysDayOfTheWeek());
+  const selectDay = (dayOfTheWeek: string) => setSelectedDay(dayOfTheWeek);
+
+  return (
+    <div className={`${styles.daily_specials} ${desktopOrMobileStyles}`}>
+      <hgroup className={styles.hgroup}>
+        <Subheader text={DAILY_SPECIALS_SUBHEADER} />
+        <Header text={DAILY_SPECIALS_HEADER} />
+      </hgroup>
+
+      {isMobile ? (
+        <></>
+      ) : (
+        <TabGroup selectedDay={selectedDay} selectDay={selectDay} />
+      )}
+
+      <AllTabContent selectedDay={selectedDay} />
+    </div>
+  );
+};
+
+type TabGroupProps = {
+  selectedDay: string;
+  selectDay: (dayOfTheWeek: string) => void;
+};
+
+const TabGroup = ({ selectedDay, selectDay }: TabGroupProps) => {
+  return (
+    <nav className={styles.tab_group}>
+      {DAYS_OF_THE_WEEK.map((dayOfTheWeek) => {
+        const selectedStyles =
+          dayOfTheWeek === selectedDay ? styles.selected : "";
+
+        return (
+          <button
+            key={`${dayOfTheWeek}-button`}
+            className={`${styles.tab_button} ${selectedStyles}`}
+            onClick={() => selectDay(dayOfTheWeek)}
+          >
+            {dayOfTheWeek}
+          </button>
+        );
+      })}
+    </nav>
+  );
+};
+
+type AllTabContentProps = {
+  selectedDay: string;
+};
+
+const AllTabContent = ({ selectedDay }: AllTabContentProps) => {
+  const isMobile = useMobileDetection();
+  const desktopOrMobileStyles = isMobile ? styles.mobile : styles.desktop;
+
+  return (
+    <div className={`${styles.all_tab_content} ${desktopOrMobileStyles}`}>
+      {DAYS_OF_THE_WEEK.map((dayOfTheWeek) => (
+        <TabContent dayOfTheWeek={dayOfTheWeek} selectedDay={selectedDay} />
+      ))}
+    </div>
+  );
+};
+
+type TabContentProps = {
+  dayOfTheWeek: DayOfTheWeek;
+  selectedDay: string;
+};
+
+const TabContent = ({ dayOfTheWeek, selectedDay }: TabContentProps) => {
+  const isMobile = useMobileDetection();
+  const tabContentClassName = constructTabContentClassName(
+    isMobile,
+    dayOfTheWeek,
+    selectedDay
+  );
+
+  const dailySpecial = DAILY_SPECIALS[dayOfTheWeek];
+
+  return (
+    <div className={tabContentClassName}>
+      <DailySpecialCard dailySpecial={dailySpecial} />
+    </div>
+  );
+};
+
+const constructTabContentClassName = (
+  isMobile: boolean,
+  dayOfTheWeek: DayOfTheWeek,
+  selectedDay: string
+) => {
+  const desktopOrMobileStyles = isMobile ? styles.mobile : styles.desktop;
+  const selectedStyles = dayOfTheWeek === selectedDay ? styles.selected : "";
+
+  const firstTabStyles =
+    dayOfTheWeek === FIRST_DAY_OF_THE_WEEK ? styles.first : "";
+  const lastTabStyles =
+    dayOfTheWeek === LAST_DAY_OF_THE_WEEK ? styles.last : "";
+
+  return `${styles.tab_content} ${desktopOrMobileStyles} ${selectedStyles} ${firstTabStyles} ${lastTabStyles}`;
+};
+
+type DailySpecialCardProps = {
+  dailySpecial: DailySpecial;
+};
+
+const DailySpecialCard = ({ dailySpecial }: DailySpecialCardProps) => {
+  const isMobile = useMobileDetection();
+  const desktopOrMobileStyles = isMobile ? styles.mobile : styles.desktop;
+
+  return (
+    <div className={`${styles.special_card} ${desktopOrMobileStyles}`}>
+      <Image
+        className={`${styles.special_image} ${desktopOrMobileStyles}`}
+        src={dailySpecial.imagePath}
+        alt={dailySpecial.name}
+        width={512}
+        height={512}
+      />
+
+      <DailySpecialText dailySpecial={dailySpecial} />
+    </div>
+  );
+};
+
+type DailySpecialTextProps = {
+  dailySpecial: DailySpecial;
+};
+
+const DailySpecialText = ({ dailySpecial }: DailySpecialTextProps) => {
+  const isMobile = useMobileDetection();
+  const desktopOrMobileStyles = isMobile ? styles.mobile : styles.desktop;
+
+  return (
+    <div className={`${styles.special_text} ${desktopOrMobileStyles}`}>
+      <hgroup>
+        <h3 className={`${styles.special_name} ${desktopOrMobileStyles}`}>
+          {dailySpecial.name}
+        </h3>
+
+        <div className={styles.special_price}>
+          <p className={`${styles.discounted_price} ${desktopOrMobileStyles}`}>
+            ${dailySpecial.discountedPrice}
+          </p>
+          <p className={`${styles.regular_price} ${desktopOrMobileStyles}`}>
+            {REGULAR_PRICE_TEXT}: ${dailySpecial.regularPrice}
+          </p>
+        </div>
+      </hgroup>
+
+      <div
+        className={`${styles.special_description} ${desktopOrMobileStyles} ${SECONDARY_FONT.className}`}
+      >
+        {dailySpecial.description}
+      </div>
+
+      <Link
+        href=""
+        className={`${styles.cart_button} ${desktopOrMobileStyles}`}
+      >
+        {ADD_TO_CART_TEXT}
+      </Link>
+    </div>
+  );
+};
+
 const Location = () => {
   const isMobile = useMobileDetection();
   const desktopOrMobileStyles = isMobile ? styles.mobile : styles.desktop;
@@ -105,12 +290,8 @@ const Location = () => {
   return (
     <div className={`${styles.location} ${desktopOrMobileStyles}`}>
       <hgroup className={styles.hgroup}>
-        <h2 className={`${styles.header} ${desktopOrMobileStyles}`}>
-          {LOCATION_HEADER}
-        </h2>
-        <p className={`${styles.subheader} ${desktopOrMobileStyles}`}>
-          {LOCATION_DESCRIPTION}
-        </p>
+        <Header text={LOCATION_HEADER} />
+        <Subheader text={LOCATION_DESCRIPTION} />
       </hgroup>
 
       <address
