@@ -4,7 +4,7 @@ import styles from "./index.module.css";
 
 const WeeklySaleButton = () => {
   return (
-    <Link href="" className={styles.weekly_sale_button}>
+    <Link href="/weekly_sale/" className={styles.weekly_sale_button}>
       <WeeklySaleIcon /> {WEEKLY_SALE_BUTTON_TEXT}
     </Link>
   );
