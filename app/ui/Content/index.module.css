@@ -4,10 +4,10 @@
   align-items: center;
 }
 .content.desktop {
-  gap: 60px;
+  gap: 64px;
   margin: 64px auto;
 }
 .content.mobile {
-  gap: 40px;
+  gap: 32px;
   margin: 32px auto;
 }

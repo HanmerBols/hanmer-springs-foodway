@@ -39,7 +39,7 @@ export const CATEGORY_CLASS_NAMES: CategoryClassNames = {
 export const CATEGORY_PATHS: CategoryPaths = {
   Noodles: "/noodles/",
   Bols: "/bols/",
-  "Quick Bites": "",
+  "Quick Bites": "/quick_bites/",
   "Groceries & Snacks": "",
 };
 

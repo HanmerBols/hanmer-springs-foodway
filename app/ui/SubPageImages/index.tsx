@@ -12,7 +12,7 @@ const SubPageImages = ({ description, imagePaths }: SubPageImagesProps) => {
   const desktopOrMobileStyles = isMobile ? styles.mobile : styles.desktop;
 
   return (
-    <div className={`${styles.sub_page_images}`}>
+    <div className={`${styles.sub_page_images} ${desktopOrMobileStyles}`}>
       {imagePaths.map((imagePath, index) => (
         <Image
           key={`sub-page-image-${index}`}

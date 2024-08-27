@@ -2,12 +2,18 @@
   display: inline-flex;
   flex-direction: column;
   align-items: flex-start;
+}
+.sub_page_images.desktop {
   gap: 40px;
+}
+.sub_page_images.mobile {
+  gap: 20px;
 }
 
 .sub_page_image {
   border-radius: 20px;
   margin: 0px auto;
+  height: auto;
 }
 .sub_page_image.desktop {
   width: calc(100% - 40px);
