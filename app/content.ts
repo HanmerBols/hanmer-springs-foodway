@@ -40,7 +40,7 @@ export const CATEGORY_PATHS: CategoryPaths = {
   Noodles: "/noodles/",
   Bols: "/bols/",
   "Quick Bites": "/quick_bites/",
-  "Groceries & Snacks": "",
+  "Groceries & Snacks": "/groceries_and_snacks/",
 };
 
 export const DAILY_SPECIALS_HEADER = "Today's Special";
