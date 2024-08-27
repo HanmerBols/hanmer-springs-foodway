@@ -1,6 +1,7 @@
 import {
   Category,
   CategoryClassNames,
+  CategoryPaths,
   DailySpecials,
   DayOfTheWeek,
 } from "./types";
@@ -33,6 +34,13 @@ export const CATEGORY_CLASS_NAMES: CategoryClassNames = {
   Bols: "bols",
   "Quick Bites": "quick_bites",
   "Groceries & Snacks": "groceries_and_snacks",
+};
+
+export const CATEGORY_PATHS: CategoryPaths = {
+  Noodles: "/noodles/",
+  Bols: "",
+  "Quick Bites": "",
+  "Groceries & Snacks": "",
 };
 
 export const DAILY_SPECIALS_HEADER = "Today's Special";

@@ -8,6 +8,10 @@ export type CategoryClassNames = {
   [category in Category]: string;
 };
 
+export type CategoryPaths = {
+  [category in Category]: string;
+};
+
 export type DayOfTheWeek =
   | "Monday"
   | "Tuesday"

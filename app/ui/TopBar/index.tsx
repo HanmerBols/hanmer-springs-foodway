@@ -6,6 +6,8 @@ import Image from "next/image";
 import OrderButton from "../OrderButton";
 import WeeklySaleButton from "../WeeklySaleButton";
 import styles from "./index.module.css";
+import { usePathname } from "next/navigation";
+import Link from "next/link";
 
 const TopBar = () => {
   const isMobile = useMobileDetection();
@@ -23,6 +25,18 @@ const TopBar = () => {
 export default TopBar;
 
 const Logo = () => {
+  const pathname = usePathname();
+
+  return pathname === "/" ? (
+    <LogoImage />
+  ) : (
+    <Link href="/">
+      <LogoImage />
+    </Link>
+  );
+};
+
+const LogoImage = () => {
   const isMobile = useMobileDetection();
   const desktopOrMobileStyles = isMobile ? styles.mobile : styles.desktop;
 

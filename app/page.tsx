@@ -17,6 +17,7 @@ import {
   BANNER_TITLE,
   CATEGORIES,
   CATEGORY_CLASS_NAMES,
+  CATEGORY_PATHS,
   DAILY_SPECIALS,
   DAILY_SPECIALS_HEADER,
   DAILY_SPECIALS_SUBHEADER,
@@ -39,25 +40,32 @@ import { useMobileDetection } from "./lib/hooks/useMobileDetection";
 import styles from "./page.module.css";
 import { DailySpecial, DayOfTheWeek } from "./types";
 import BottomBar from "./ui/BottomBar";
+import Content from "./ui/Content";
 import Footer from "./ui/Footer";
 import Header from "./ui/Header";
+import Introduction from "./ui/Introduction";
 import Subheader from "./ui/Subheader";
+import Subtitle from "./ui/Subtitle";
+import Title from "./ui/Title";
 import TopBar from "./ui/TopBar";
 
 const LandingPage = () => {
   const isMobile = useMobileDetection();
-  const desktopOrMobileStyles = isMobile ? styles.mobile : styles.desktop;
 
   return (
     <>
       <TopBar />
-      <main className={`${styles.content} ${desktopOrMobileStyles}`}>
-        <Banner />
-        <Introduction />
+      <Banner />
+      <Content>
+        <Introduction>
+          <Subtitle text={INTRO_FIRST_LINE} />
+          <Title text={INTRO_SECOND_LINE} />
+        </Introduction>
+
         <Categories />
         <DailySpecials />
         <Location />
-      </main>
+      </Content>
       <Footer />
       {isMobile ? <BottomBar /> : <></>}
     </>
@@ -126,22 +134,6 @@ const BannerOverlay = () => {
   );
 };
 
-const Introduction = () => {
-  const isMobile = useMobileDetection();
-  const desktopOrMobileStyles = isMobile ? styles.mobile : styles.desktop;
-
-  return (
-    <div className={`${styles.introduction} ${desktopOrMobileStyles}`}>
-      <p className={`${styles.intro_first_line} ${desktopOrMobileStyles}`}>
-        {INTRO_FIRST_LINE}
-      </p>
-      <h1 className={`${styles.intro_second_line} ${desktopOrMobileStyles}`}>
-        {INTRO_SECOND_LINE}
-      </h1>
-    </div>
-  );
-};
-
 const Categories = () => {
   const isMobile = useMobileDetection();
   const desktopOrMobileStyles = isMobile ? styles.mobile : styles.desktop;
@@ -151,7 +143,7 @@ const Categories = () => {
       {CATEGORIES.map((category) => (
         <Link
           key={category}
-          href=""
+          href={CATEGORY_PATHS[category]}
           className={`${styles.category} ${desktopOrMobileStyles} ${styles[CATEGORY_CLASS_NAMES[category]]}`}
         >
           <div className={`${styles.category_text} ${desktopOrMobileStyles}`}>

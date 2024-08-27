@@ -1,0 +1,13 @@
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.content.desktop {
+  gap: 60px;
+  margin: 64px auto;
+}
+.content.mobile {
+  gap: 40px;
+  margin: 32px auto;
+}
