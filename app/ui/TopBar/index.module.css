@@ -20,6 +20,7 @@
 }
 
 .logo {
+  display: block;
   width: auto;
 }
 .logo.desktop {
