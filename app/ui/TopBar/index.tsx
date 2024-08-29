@@ -8,6 +8,8 @@ import { usePathname } from "next/navigation";
 import OrderButton from "../OrderButton";
 import WeeklySaleButton from "../WeeklySaleButton";
 import styles from "./index.module.css";
+import { useScrollPosition } from "@/app/lib/hooks/useScrollPosition";
+import { linearInterpolate } from "@/app/lib/math";
 
 const TopBar = () => {
   const isMobile = useMobileDetection();
@@ -40,12 +42,17 @@ const LogoImage = () => {
   const isMobile = useMobileDetection();
   const desktopOrMobileStyles = isMobile ? styles.mobile : styles.desktop;
 
+  const scrollPosition = useScrollPosition();
+
+  const heightRange = isMobile ? [32, 40] : [40, 60];
+  const height = linearInterpolate(scrollPosition, [0, 50], heightRange);
+
   return (
     <Image
       src={LOGO_IMAGE_PATH}
       alt={LOGO_DESCRIPTION}
       width={178}
-      height={60}
+      height={height}
       className={`${styles.logo} ${desktopOrMobileStyles}`}
     />
   );

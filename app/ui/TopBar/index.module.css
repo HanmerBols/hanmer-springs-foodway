@@ -23,12 +23,6 @@
   display: block;
   width: auto;
 }
-.logo.desktop {
-  height: 60px;
-}
-.logo.mobile {
-  height: 40px;
-}
 
 .buttons {
   display: flex;
