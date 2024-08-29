@@ -9,7 +9,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
 import Link from "next/link";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import {
   ADD_TO_CART_TEXT,
   ADDRESS,
@@ -36,6 +36,7 @@ import {
 } from "./content";
 import { getTodaysDayOfTheWeek } from "./lib/dates";
 import { SECONDARY_FONT } from "./lib/fonts";
+import { useDailySpecialScroll } from "./lib/hooks/useDailySpecialScroll";
 import { useMobileDetection } from "./lib/hooks/useMobileDetection";
 import styles from "./page.module.css";
 import { DailySpecial, DayOfTheWeek } from "./types";
@@ -160,7 +161,6 @@ const DailySpecials = () => {
   const desktopOrMobileStyles = isMobile ? styles.mobile : styles.desktop;
 
   const [selectedDay, setSelectedDay] = useState(getTodaysDayOfTheWeek());
-  const selectDay = (dayOfTheWeek: string) => setSelectedDay(dayOfTheWeek);
 
   return (
     <div className={`${styles.daily_specials} ${desktopOrMobileStyles}`}>
@@ -172,7 +172,7 @@ const DailySpecials = () => {
       {isMobile ? (
         <></>
       ) : (
-        <TabGroup selectedDay={selectedDay} selectDay={selectDay} />
+        <TabGroup selectedDay={selectedDay} selectDay={setSelectedDay} />
       )}
 
       <AllTabContent selectedDay={selectedDay} />
@@ -181,8 +181,8 @@ const DailySpecials = () => {
 };
 
 type TabGroupProps = {
-  selectedDay: string;
-  selectDay: (dayOfTheWeek: string) => void;
+  selectedDay: DayOfTheWeek;
+  selectDay: (dayOfTheWeek: DayOfTheWeek) => void;
 };
 
 const TabGroup = ({ selectedDay, selectDay }: TabGroupProps) => {
@@ -207,18 +207,14 @@ const TabGroup = ({ selectedDay, selectDay }: TabGroupProps) => {
 };
 
 type AllTabContentProps = {
-  selectedDay: string;
+  selectedDay: DayOfTheWeek;
 };
 
 const AllTabContent = ({ selectedDay }: AllTabContentProps) => {
   const isMobile = useMobileDetection();
   const desktopOrMobileStyles = isMobile ? styles.mobile : styles.desktop;
 
-  const ref = useRef<HTMLDivElement>(null);
-  const scrollLeft = () =>
-    ref.current?.scrollBy(-DAILY_SPECIAL_SCROLL_AMOUNT, 0);
-  const scrollRight = () =>
-    ref.current?.scrollBy(DAILY_SPECIAL_SCROLL_AMOUNT, 0);
+  const { ref, scrollLeft, scrollRight } = useDailySpecialScroll();
 
   return (
     <div
