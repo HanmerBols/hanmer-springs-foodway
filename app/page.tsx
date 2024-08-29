@@ -40,6 +40,7 @@ import { useDailySpecialScroll } from "./lib/hooks/useDailySpecialScroll";
 import { useMobileDetection } from "./lib/hooks/useMobileDetection";
 import styles from "./page.module.css";
 import { DailySpecial, DayOfTheWeek } from "./types";
+import Affiliates from "./ui/Affiliates";
 import BottomBar from "./ui/BottomBar";
 import Content from "./ui/Content";
 import Footer from "./ui/Footer";
@@ -55,6 +56,7 @@ const LandingPage = () => {
 
   return (
     <>
+      <Affiliates />
       <TopBar />
       <Banner />
       <Content>

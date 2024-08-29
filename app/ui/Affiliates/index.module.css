@@ -1,0 +1,27 @@
+.affiliates {
+  display: flex;
+  align-items: center;
+  background: var(--Neutral-25, #f7f7f7);
+}
+.affiliates.desktop {
+  gap: 20px;
+  font-size: 16px;
+  padding: 12px 80px;
+}
+.affiliates.mobile {
+  gap: 8px;
+  font-size: 14px;
+  padding: 8px 16px;
+}
+
+.affiliates_intro_text {
+  color: var(--secondary-color);
+}
+
+.affiliate {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  color: var(--Brown-200, #64524e);
+}

@@ -9,6 +9,9 @@ import {
 export const WEBSITE_TITLE = "Hanmer Springs Foodway";
 export const WEBSITE_DESCRIPTION = "Enjoy food your way";
 
+export const AFFILIATES_INTRO_TEXT = "Right Next Door";
+export const HANMER_WOOLSHED_NAME = "Hanmer Woolshed";
+
 export const LOGO_IMAGE_PATH = "/hanmer_springs_foodway_logo.png";
 export const LOGO_DESCRIPTION = "Hanmer Springs Foodway";
 
