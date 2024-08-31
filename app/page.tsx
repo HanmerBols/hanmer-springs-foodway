@@ -260,8 +260,6 @@ const TabContent = (props: TabContentProps) => {
   );
 };
 
-const DAILY_SPECIAL_SCROLL_AMOUNT = 400;
-
 const constructTabContentClassName = (
   isMobile: boolean,
   dayOfTheWeek: DayOfTheWeek,

@@ -8,7 +8,7 @@ export const useDailySpecialScroll = () => {
   const ref = useRef<HTMLDivElement>(null);
 
   const deviceWidth = useDeviceWidth();
-  const scrollAmount = deviceWidth - DAILY_SPECIAL_MARGIN_PIXELS;
+  const scrollAmount = deviceWidth - DAILY_SPECIAL_MARGIN_PIXELS / 2;
 
   const scrollLeft = () => ref.current?.scrollBy(-scrollAmount, 0);
   const scrollRight = () => ref.current?.scrollBy(scrollAmount, 0);

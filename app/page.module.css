@@ -295,6 +295,8 @@
   border-radius: 100px;
   border: 1px solid white;
   background: white;
+
+  color: var(--primary-color);
 }
 
 .special_image {
@@ -354,7 +356,7 @@
 
 .regular_price {
   color: #c3a69f;
-  text-decoration: line-through solid #c3a69f 2px;
+  text-decoration: line-through solid currentcolor 1px;
 }
 .regular_price.desktop {
   font-size: 18px;
