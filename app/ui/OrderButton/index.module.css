@@ -7,8 +7,8 @@
   align-self: stretch;
 
   border-radius: 12px;
-  border: 3px solid #061023;
-  background: #061023;
+  border: 3px solid var(--neutral-300);
+  background: var(--neutral-300);
 
   color: white;
 

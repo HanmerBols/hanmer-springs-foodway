@@ -1,3 +1,6 @@
+.subheader {
+  color: var(--brown-200);
+}
 .subheader.desktop {
   font-size: 20px;
 }

@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  border-top: 1px solid var(--secondary-color);
+  border-top: 1px solid var(--brown-200);
 }
 .footer.desktop {
   gap: 24px;

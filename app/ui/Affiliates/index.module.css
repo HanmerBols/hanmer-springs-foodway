@@ -1,7 +1,7 @@
 .affiliates {
   display: flex;
   align-items: center;
-  background: var(--Neutral-25, #f7f7f7);
+  background: var(--neutral-25);
 }
 .affiliates.desktop {
   gap: 20px;
@@ -15,7 +15,7 @@
 }
 
 .affiliates_intro_text {
-  color: var(--secondary-color);
+  color: var(--brown-100);
 }
 
 .affiliate {
@@ -23,5 +23,5 @@
   align-items: center;
   gap: 8px;
 
-  color: var(--Brown-200, #64524e);
+  color: var(--brown-200);
 }
