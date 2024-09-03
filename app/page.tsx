@@ -3,8 +3,6 @@
 import {
   faChevronLeft,
   faChevronRight,
-  faEnvelope,
-  faPhone,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Image from "next/image";
@@ -22,7 +20,6 @@ import {
   DAILY_SPECIALS_HEADER,
   DAILY_SPECIALS_SUBHEADER,
   DAYS_OF_THE_WEEK,
-  EMAIL_ADDRESS,
   ENQUIRIES_TEXT,
   FIRST_DAY_OF_THE_WEEK,
   INTRO_FIRST_LINE,
@@ -31,7 +28,6 @@ import {
   LOCATION_DESCRIPTION,
   LOCATION_HEADER,
   OPENING_HOURS,
-  PHONE_NUMBER,
   REGULAR_PRICE_TEXT,
 } from "./content";
 import { getTodaysDayOfTheWeek } from "./lib/dates";
@@ -42,9 +38,9 @@ import styles from "./page.module.css";
 import { DailySpecial, DayOfTheWeek } from "./types";
 import Affiliates from "./ui/Affiliates";
 import BottomBar from "./ui/BottomBar";
+import ContactMethods from "./ui/ContactMethods";
 import Content from "./ui/Content";
 import Footer from "./ui/Footer";
-import Header from "./ui/Header";
 import Introduction from "./ui/Introduction";
 import Subheader from "./ui/Subheader";
 import Subtitle from "./ui/Subtitle";
@@ -168,7 +164,7 @@ const DailySpecials = () => {
     <div className={`${styles.daily_specials} ${desktopOrMobileStyles}`}>
       <hgroup className={styles.hgroup}>
         <Subheader text={DAILY_SPECIALS_SUBHEADER} />
-        <Header text={DAILY_SPECIALS_HEADER} />
+        <Title text={DAILY_SPECIALS_HEADER} />
       </hgroup>
 
       {isMobile ? (
@@ -410,7 +406,7 @@ const Location = () => {
   return (
     <div className={`${styles.location} ${desktopOrMobileStyles}`}>
       <hgroup className={styles.hgroup}>
-        <Header text={LOCATION_HEADER} />
+        <Title text={LOCATION_HEADER} />
         <Subheader text={LOCATION_DESCRIPTION} />
       </hgroup>
 
@@ -471,22 +467,7 @@ const ContactDetails = () => {
         {ENQUIRIES_TEXT}
       </h3>
 
-      <div
-        className={`${styles.contact_methods} ${desktopOrMobileStyles} ${SECONDARY_FONT.className}`}
-      >
-        <a
-          className={`${styles.contact_method} ${desktopOrMobileStyles}`}
-          href={`mailto:${EMAIL_ADDRESS}`}
-        >
-          <FontAwesomeIcon icon={faEnvelope} /> {EMAIL_ADDRESS}
-        </a>
-        <a
-          className={`${styles.contact_method} ${desktopOrMobileStyles}`}
-          href={`tel:${PHONE_NUMBER}`}
-        >
-          <FontAwesomeIcon icon={faPhone} /> {PHONE_NUMBER}
-        </a>
-      </div>
+      <ContactMethods />
     </div>
   );
 };

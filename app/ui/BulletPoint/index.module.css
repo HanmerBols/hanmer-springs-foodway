@@ -1,0 +1,13 @@
+.list.mobile {
+  padding-left: 16px;
+}
+
+.bullet_point {
+  text-align: justify;
+}
+.bullet_point.desktop {
+  font-size: 18px;
+}
+.bullet_point.mobile {
+  font-size: 16px;
+}

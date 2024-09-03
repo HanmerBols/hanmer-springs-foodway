@@ -1,0 +1,12 @@
+.text_section {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0px auto;
+}
+.text_section.desktop {
+  width: 64%;
+}
+.text_section.mobile {
+  width: calc(100% - 32px);
+}

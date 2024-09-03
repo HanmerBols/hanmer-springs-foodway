@@ -9,9 +9,26 @@
   gap: 24px;
   width: calc(100% - 160px);
   padding: 80px;
+  font-size: 16px;
 }
 .footer.mobile {
   gap: 20px;
   width: calc(100% - 40px);
   padding: 40px 20px 140px 20px;
+  font-size: 14px;
+}
+
+.footnotes {
+  display: flex;
+  align-items: center;
+}
+.footnotes.desktop {
+  gap: 16px;
+}
+.footnotes.mobile {
+  gap: 8px;
+}
+
+.footnote:hover {
+  text-decoration: underline;
 }
