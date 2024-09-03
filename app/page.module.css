@@ -186,25 +186,28 @@
 }
 
 .tab_button {
-  display: flex;
   width: 160px;
   height: 54px;
-  padding: 8px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
+  padding: 12px 8px 8px 8px;
 
   font-size: 20px;
   text-align: center;
+
   border-radius: 100px;
   border: 1px solid white;
-  background: white;
   color: var(--brown-100);
+  background: white; /* to cover brush stroke */
 }
 .tab_button.selected {
   border: 1px solid var(--brown-50);
-  background: white;
   color: var(--brown-300);
+  background: none; /* to uncover brush stroke */
+}
+
+.special_brush_stroke {
+  z-index: -1;
+  position: relative;
+  top: -16px;
 }
 
 .all_tab_content.mobile {
@@ -408,6 +411,18 @@
 }
 .location.mobile {
   gap: 20px;
+}
+
+.location_brush_stroke {
+  z-index: -1;
+  position: relative;
+  fill: #93c5ff;
+}
+.location_brush_stroke.desktop {
+  top: 64px;
+}
+.location_brush_stroke.mobile {
+  top: 37px;
 }
 
 .location_content {

@@ -197,10 +197,59 @@ const TabGroup = ({ selectedDay, selectDay }: TabGroupProps) => {
             onClick={() => selectDay(dayOfTheWeek)}
           >
             {dayOfTheWeek}
+            <br />
+            <SpecialBrushStroke dayOfTheWeek={dayOfTheWeek} />
           </button>
         );
       })}
     </nav>
+  );
+};
+
+type SpecialBrushStrokeProps = {
+  dayOfTheWeek: DayOfTheWeek;
+};
+
+const SpecialBrushStroke = ({ dayOfTheWeek }: SpecialBrushStrokeProps) => {
+  const widthMap: { [dayOfTheWeek in DayOfTheWeek]: number } = {
+    Monday: 90,
+    Tuesday: 94,
+    Wednesday: 124,
+    Thursday: 102,
+    Friday: 72,
+    Saturday: 98,
+    Sunday: 86,
+  };
+
+  const width = widthMap[dayOfTheWeek];
+
+  return (
+    <svg
+      fill="none"
+      width={width}
+      height="16"
+      viewBox="0 0 216 21"
+      xmlns="http://www.w3.org/2000/svg"
+      className={styles.special_brush_stroke}
+    >
+      <path
+        d="M17.9725 6.22754L114.292 7.06114L215.547 0.000130115L206.797 11.3343L175.751 16.5225L82.1171 15.7122L0.41626 20.462L6.09935 9.59739L17.9725 6.22754Z"
+        fill="url(#paint0_linear_775_168)"
+      />
+      <defs>
+        <linearGradient
+          id="paint0_linear_775_168"
+          x1="0.0958543"
+          y1="8.25058"
+          x2="102.042"
+          y2="5.24013"
+          gradientUnits="userSpaceOnUse"
+        >
+          <stop stop-color="#FFB342" />
+          <stop offset="1" stop-color="#FF6B57" />
+        </linearGradient>
+      </defs>
+    </svg>
   );
 };
 
@@ -406,6 +455,7 @@ const Location = () => {
   return (
     <div className={`${styles.location} ${desktopOrMobileStyles}`}>
       <hgroup className={styles.hgroup}>
+        <LocationBrushStroke />
         <Title text={LOCATION_HEADER} />
         <Subheader text={LOCATION_DESCRIPTION} />
       </hgroup>
@@ -421,6 +471,31 @@ const Location = () => {
         </div>
       </address>
     </div>
+  );
+};
+
+const LocationBrushStroke = () => {
+  const isMobile = useMobileDetection();
+  const desktopOrMobileStyles = isMobile ? styles.mobile : styles.desktop;
+
+  const color = "#93C5FF";
+  const width = isMobile ? 112 : 216;
+  const height = isMobile ? 12 : 21;
+
+  return (
+    <svg
+      fill={color}
+      width={width}
+      height={height}
+      viewBox="0 0 216 21"
+      xmlns="http://www.w3.org/2000/svg"
+      className={`${styles.location_brush_stroke} ${desktopOrMobileStyles}`}
+    >
+      <path
+        d="M17.9725 6.22754L114.292 7.06114L215.547 0.000130115L206.797 11.3343L175.751 16.5225L82.1171 15.7122L0.41626 20.462L6.09935 9.59739L17.9725 6.22754Z"
+        fill={color}
+      />
+    </svg>
   );
 };
 
