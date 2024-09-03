@@ -82,7 +82,7 @@ export const DAILY_SPECIALS: DailySpecials = {
   },
   Wednesday: {
     imagePath: "/landing_page/daily_specials/2_wednesday.png",
-    name: "Bibimbap Bol",
+    name: "Bulgogi Bol",
     discountedPrice: 16,
     regularPrice: 24,
     description: "Rice bowl with Korean marinated thinly sliced beef.",
