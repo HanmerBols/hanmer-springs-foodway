@@ -18,6 +18,8 @@ export const LOGO_DESCRIPTION = "Hanmer Springs Foodway";
 export const WEEKLY_SALE_BUTTON_TEXT = "Weekly Sale!";
 export const ORDER_BUTTON_TEXT = "Order Now";
 
+export const ORDERING_SYSTEM_URL = "https://order.sipocloudpos.com/hsfoodway";
+
 export const BANNER_TITLE = "Enjoy Food Your Way.";
 export const BANNER_SUBTITLE =
   "Wide selection of noodles and food bowls, crafted to your taste.";
