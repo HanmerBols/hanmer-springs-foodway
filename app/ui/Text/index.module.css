@@ -1,0 +1,9 @@
+.text {
+  text-align: justify;
+}
+.text.desktop {
+  font-size: 18px;
+}
+.text.mobile {
+  font-size: 16px;
+}

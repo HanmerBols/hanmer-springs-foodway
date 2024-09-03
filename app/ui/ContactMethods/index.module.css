@@ -10,7 +10,7 @@
   align-items: center;
 }
 .contact_methods.desktop {
-  gap: 20px;
+  gap: 16px;
 }
 .contact_methods.mobile {
   gap: 8px;

@@ -134,3 +134,4 @@ export const PHONE_NUMBER = "021 086 727 93";
 
 export const COPYRIGHT_TEXT = "Hanmer Foodway 2024.";
 export const TERMS_AND_CONDITIONS_TEXT = "Terms & Conditions";
+export const PRIVACY_POLICY_TEXT = "Privacy Policy";

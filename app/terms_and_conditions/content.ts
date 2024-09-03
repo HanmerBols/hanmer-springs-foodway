@@ -1,19 +1,16 @@
-import { TermsAndConditions } from "./types";
+import { SectionContent } from "../types";
 
 export const TERM_AND_CONDITIONS_PAGE_TITLE = "Terms & Conditions";
 
-export const TERMS_AND_CONDITIONS: TermsAndConditions = [
+export const TERMS_AND_CONDITIONS: SectionContent[] = [
   {
     header: "1. Introduction",
-    subsections: [
-      {
-        text: "Welcome to Hanmer Springs Foodway! These Terms and Conditions govern your use of our online ordering system for groceries, convenience items, and takeaway services. By using our website and placing an order, you agree to be bound by these Terms and Conditions.",
-      },
-    ],
+    leadingText:
+      "Welcome to Hanmer Springs Foodway! These Terms and Conditions govern your use of our online ordering system for groceries, convenience items, and takeaway services. By using our website and placing an order, you agree to be bound by these Terms and Conditions.",
   },
   {
     header: "2. Orders and Payments",
-    subsections: [
+    points: [
       {
         text: "Payment must be made at the time of ordering via the accepted payment methods listed on our website.",
       },
@@ -24,7 +21,7 @@ export const TERMS_AND_CONDITIONS: TermsAndConditions = [
   },
   {
     header: "3. Product Availability and Pricing",
-    subsections: [
+    points: [
       {
         text: "All products listed on our website are subject to availability. We reserve the right to change prices and discontinue products without notice.",
       },
@@ -35,7 +32,7 @@ export const TERMS_AND_CONDITIONS: TermsAndConditions = [
   },
   {
     header: "4. Delivery and Collection",
-    subsections: [
+    points: [
       {
         subheader: "Delivery:",
         text: "We offer delivery services to select areas. Delivery times are estimates and may vary due to factors beyond our control.",
@@ -51,7 +48,7 @@ export const TERMS_AND_CONDITIONS: TermsAndConditions = [
   },
   {
     header: "5. Returns and Refunds",
-    subsections: [
+    points: [
       {
         subheader: "Perishable Items:",
         text: "Due to the nature of our products, perishable items are non-returnable unless they are defective or damaged upon delivery.",
@@ -68,15 +65,12 @@ export const TERMS_AND_CONDITIONS: TermsAndConditions = [
   },
   {
     header: "6. Allergies and Special Dietary Requirements",
-    subsections: [
-      {
-        text: "It is your responsibility to ensure that any products you order are suitable for your dietary needs. Please contact us for information on ingredients if you have any allergies or special dietary requirements.",
-      },
-    ],
+    leadingText:
+      "It is your responsibility to ensure that any products you order are suitable for your dietary needs. Please contact us for information on ingredients if you have any allergies or special dietary requirements.",
   },
   {
     header: "7. Privacy and Data Protection",
-    subsections: [
+    points: [
       {
         text: "We are committed to protecting your privacy. We will collect, store, and process your personal information in accordance with our Privacy Policy.",
       },
@@ -87,7 +81,7 @@ export const TERMS_AND_CONDITIONS: TermsAndConditions = [
   },
   {
     header: "8. Limitation of Liability",
-    subsections: [
+    points: [
       {
         text: "We are not liable for any indirect, incidental, or consequential damages arising from the use of our website, products, or services.",
       },
@@ -98,7 +92,7 @@ export const TERMS_AND_CONDITIONS: TermsAndConditions = [
   },
   {
     header: "9. Changes to Terms and Conditions",
-    subsections: [
+    points: [
       {
         text: "We reserve the right to modify these Terms and Conditions at any time. Any changes will be effective immediately upon posting on our website.",
       },
@@ -109,18 +103,12 @@ export const TERMS_AND_CONDITIONS: TermsAndConditions = [
   },
   {
     header: "10. Governing Law",
-    subsections: [
-      {
-        text: "These Terms and Conditions are governed by the laws of New Zealand. Any disputes arising out of or in connection with these terms will be subject to the exclusive jurisdiction of the courts of New Zealand.",
-      },
-    ],
+    leadingText:
+      "These Terms and Conditions are governed by the laws of New Zealand. Any disputes arising out of or in connection with these terms will be subject to the exclusive jurisdiction of the courts of New Zealand.",
   },
   {
     header: "11. Contact Information",
-    subsections: [
-      {
-        text: "If you have any questions about these Terms and Conditions, please contact us at:",
-      },
-    ],
+    leadingText:
+      "If you have any questions about these Terms and Conditions, please contact us at:",
   },
 ];

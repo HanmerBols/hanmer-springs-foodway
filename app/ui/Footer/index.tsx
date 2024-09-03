@@ -1,9 +1,13 @@
-import { COPYRIGHT_TEXT, TERMS_AND_CONDITIONS_TEXT } from "@/app/content";
+import {
+  COPYRIGHT_TEXT,
+  PRIVACY_POLICY_TEXT,
+  TERMS_AND_CONDITIONS_TEXT,
+} from "@/app/content";
 import { useMobileDetection } from "@/app/lib/hooks/useMobileDetection";
-import styles from "./index.module.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCopyright } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Link from "next/link";
+import styles from "./index.module.css";
 
 const Footer = () => {
   const isMobile = useMobileDetection();
@@ -35,6 +39,10 @@ const Footnotes = () => {
     <div className={`${styles.footnotes} ${desktopOrMobileStyles}`}>
       <Link className={styles.footnote} href="/terms_and_conditions/">
         {TERMS_AND_CONDITIONS_TEXT}
+      </Link>
+
+      <Link className={styles.footnote} href="/privacy_policy/">
+        {PRIVACY_POLICY_TEXT}
       </Link>
     </div>
   );

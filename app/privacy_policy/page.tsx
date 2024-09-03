@@ -15,12 +15,9 @@ import TextSection from "../ui/TextSection";
 import TextSections from "../ui/TextSections";
 import Title from "../ui/Title";
 import TopBar from "../ui/TopBar";
-import {
-  TERM_AND_CONDITIONS_PAGE_TITLE,
-  TERMS_AND_CONDITIONS,
-} from "./content";
+import { PRIVACY_POLICY, PRIVACY_POLICY_PAGE_TITLE } from "./content";
 
-const TermsAndConditionsPage = () => {
+const PrivacyPolicyPage = () => {
   const isMobile = useMobileDetection();
 
   return (
@@ -28,11 +25,11 @@ const TermsAndConditionsPage = () => {
       <TopBar />
       <Content>
         <Introduction>
-          <Title text={TERM_AND_CONDITIONS_PAGE_TITLE} />
+          <Title text={PRIVACY_POLICY_PAGE_TITLE} />
         </Introduction>
 
         <TextSections>
-          {TERMS_AND_CONDITIONS.map((section) => (
+          {PRIVACY_POLICY.map((section) => (
             <Section key={section.header} section={section} />
           ))}
 
@@ -45,7 +42,7 @@ const TermsAndConditionsPage = () => {
   );
 };
 
-export default TermsAndConditionsPage;
+export default PrivacyPolicyPage;
 
 type SectionProps = {
   section: SectionContent;

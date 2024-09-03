@@ -32,3 +32,15 @@ export type DailySpecial = {
   regularPrice: number;
   description: string;
 };
+
+export type SectionContent = {
+  header: string;
+  leadingText?: string;
+  points?: PointContent[];
+  endingText?: string;
+};
+
+export type PointContent = {
+  subheader?: string;
+  text: string;
+};

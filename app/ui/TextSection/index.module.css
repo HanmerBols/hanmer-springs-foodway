@@ -1,7 +1,7 @@
 .text_section {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 6px;
   margin: 0px auto;
 }
 .text_section.desktop {
