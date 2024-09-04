@@ -135,5 +135,12 @@ export const EMAIL_ADDRESS = "info@hanmerfoodway.co.nz";
 export const PHONE_NUMBER = "021 086 727 93";
 
 export const COPYRIGHT_TEXT = "Hanmer Foodway 2024.";
+
+export const TERMS_AND_CONDITIONS_URL = "/terms_and_conditions/";
 export const TERMS_AND_CONDITIONS_TEXT = "Terms & Conditions";
+
+export const PRIVACY_POLICY_URL = "/privacy_policy/";
 export const PRIVACY_POLICY_TEXT = "Privacy Policy";
+
+export const ORDERING_SYSTEM_ADMIN_URL = "https://admin.sipocloudpos.com";
+export const ORDERING_SYSTEM_ADMIN_TEXT = "Admin";
