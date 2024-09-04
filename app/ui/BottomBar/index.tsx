@@ -1,3 +1,4 @@
+import { WEEKLY_SALE_URL } from "@/app/content";
 import { usePathname } from "next/navigation";
 import OrderButton from "../OrderButton";
 import WeeklySaleButton from "../WeeklySaleButton";
@@ -8,7 +9,7 @@ const BottomBar = () => {
 
   return (
     <div className={styles.bottom_bar}>
-      {pathname === "/weekly_sale/" ? <></> : <WeeklySaleButton />}
+      {pathname === WEEKLY_SALE_URL ? <></> : <WeeklySaleButton />}
       <OrderButton />
     </div>
   );

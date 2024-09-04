@@ -11,6 +11,8 @@ import { useState } from "react";
 import {
   ADD_TO_CART_TEXT,
   ADDRESS,
+  BANNER_PATH_DESKTOP,
+  BANNER_PATH_MOBILE,
   BANNER_SUBTITLE,
   BANNER_TITLE,
   CATEGORIES,
@@ -22,6 +24,7 @@ import {
   DAYS_OF_THE_WEEK,
   ENQUIRIES_TEXT,
   FIRST_DAY_OF_THE_WEEK,
+  GOOGLE_MAPS_EMBED_URL,
   INTRO_FIRST_LINE,
   INTRO_SECOND_LINE,
   LAST_DAY_OF_THE_WEEK,
@@ -29,6 +32,7 @@ import {
   LOCATION_HEADER,
   OPENING_HOURS,
   REGULAR_PRICE_TEXT,
+  VIDEO_NOT_SUPPORTED_TEXT,
 } from "./content";
 import { getTodaysDayOfTheWeek } from "./lib/dates";
 import { SECONDARY_FONT } from "./lib/fonts";
@@ -94,8 +98,9 @@ const DesktopBanner = () => {
       muted
       loop
     >
-      <source src="/landing_page/banner_desktop.webm" type="video/mp4" />
-      Your browser does not support the videos.
+      <source src={BANNER_PATH_DESKTOP} type="video/mp4" />
+
+      {VIDEO_NOT_SUPPORTED_TEXT}
     </video>
   );
 };
@@ -104,8 +109,8 @@ const MobileBanner = () => {
   return (
     <Image
       className={`${styles.banner} ${styles.mobile}`}
-      src="/landing_page/banner_mobile.png"
-      alt="Enjoy food your way"
+      src={BANNER_PATH_MOBILE}
+      alt={BANNER_TITLE}
       width={390}
       height={240}
       priority
@@ -506,7 +511,7 @@ const Map = () => {
   return (
     <iframe
       className={`${styles.map} ${desktopOrMobileStyles}`}
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2940.525757186492!2d172.8273702760544!3d-42.52288517117818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d306303863472c9%3A0x99c0713021842c4b!2sHanmer%20Springs%20Foodway!5e0!3m2!1sen!2snz!4v1718272202335!5m2!1sen!2snz"
+      src={GOOGLE_MAPS_EMBED_URL}
       referrerPolicy="no-referrer-when-downgrade"
       allowFullScreen
       loading="lazy"

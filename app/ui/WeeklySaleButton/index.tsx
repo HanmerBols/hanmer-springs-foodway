@@ -1,10 +1,10 @@
-import { WEEKLY_SALE_BUTTON_TEXT } from "@/app/content";
+import { WEEKLY_SALE_BUTTON_TEXT, WEEKLY_SALE_URL } from "@/app/content";
 import Link from "next/link";
 import styles from "./index.module.css";
 
 const WeeklySaleButton = () => {
   return (
-    <Link href="/weekly_sale/" className={styles.weekly_sale_button}>
+    <Link href={WEEKLY_SALE_URL} className={styles.weekly_sale_button}>
       <WeeklySaleIcon /> {WEEKLY_SALE_BUTTON_TEXT}
     </Link>
   );

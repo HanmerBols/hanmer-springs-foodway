@@ -1,4 +1,8 @@
-import { AFFILIATES_INTRO_TEXT, HANMER_WOOLSHED_NAME } from "@/app/content";
+import {
+  AFFILIATES_INTRO_TEXT,
+  HANMER_WOOLSHED_NAME,
+  HANMER_WOOLSHED_URL,
+} from "@/app/content";
 import { useMobileDetection } from "@/app/lib/hooks/useMobileDetection";
 import Link from "next/link";
 import styles from "./index.module.css";
@@ -17,8 +21,8 @@ const Affiliates = () => {
 
       <Link
         className={styles.affiliate}
+        href={HANMER_WOOLSHED_URL}
         target="_blank"
-        href="https://hanmerwoolshed.co.nz/"
       >
         <HanmerWoolshedIcon />
         {HANMER_WOOLSHED_NAME}

@@ -1,15 +1,19 @@
 "use client";
 
-import { LOGO_DESCRIPTION, LOGO_IMAGE_PATH } from "@/app/content";
+import {
+  LOGO_DESCRIPTION,
+  LOGO_IMAGE_PATH,
+  WEEKLY_SALE_URL,
+} from "@/app/content";
 import { useMobileDetection } from "@/app/lib/hooks/useMobileDetection";
+import { useScrollPosition } from "@/app/lib/hooks/useScrollPosition";
+import { linearInterpolate } from "@/app/lib/math";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import OrderButton from "../OrderButton";
 import WeeklySaleButton from "../WeeklySaleButton";
 import styles from "./index.module.css";
-import { useScrollPosition } from "@/app/lib/hooks/useScrollPosition";
-import { linearInterpolate } from "@/app/lib/math";
 
 const TopBar = () => {
   const isMobile = useMobileDetection();
@@ -63,7 +67,7 @@ const Buttons = () => {
 
   return (
     <div className={styles.buttons}>
-      {pathname === "/weekly_sale/" ? <></> : <WeeklySaleButton />}
+      {pathname === WEEKLY_SALE_URL ? <></> : <WeeklySaleButton />}
       <OrderButton />
     </div>
   );

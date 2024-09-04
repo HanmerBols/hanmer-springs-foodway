@@ -6,23 +6,31 @@ import {
   DayOfTheWeek,
 } from "./types";
 
+export const GOOGLE_ANALYTICS_ID = "G-MVTNC9MC3X";
+
 export const WEBSITE_TITLE = "Hanmer Springs Foodway";
 export const WEBSITE_DESCRIPTION = "Enjoy food your way";
 
 export const AFFILIATES_INTRO_TEXT = "Right Next Door";
 export const HANMER_WOOLSHED_NAME = "Hanmer Woolshed";
+export const HANMER_WOOLSHED_URL = "https://hanmerwoolshed.co.nz/";
 
 export const LOGO_IMAGE_PATH = "/hanmer_springs_foodway_logo.png";
 export const LOGO_DESCRIPTION = "Hanmer Springs Foodway";
 
 export const WEEKLY_SALE_BUTTON_TEXT = "Weekly Sale!";
-export const ORDER_BUTTON_TEXT = "Order Now";
+export const WEEKLY_SALE_URL = "/weekly_sale/";
 
+export const ORDER_BUTTON_TEXT = "Order Now";
 export const ORDERING_SYSTEM_URL = "https://order.sipocloudpos.com/hsfoodway";
 
 export const BANNER_TITLE = "Enjoy Food Your Way.";
 export const BANNER_SUBTITLE =
   "Wide selection of noodles and food bowls, crafted to your taste.";
+export const BANNER_PATH_MOBILE = "/landing_page/banner_mobile.png";
+export const BANNER_PATH_DESKTOP = "/landing_page/banner_desktop.webm";
+export const VIDEO_NOT_SUPPORTED_TEXT =
+  "Your browser does not support the videos.";
 
 export const INTRO_FIRST_LINE = "Welcome to your";
 export const INTRO_SECOND_LINE = "One Stop Convenience Shop";
@@ -127,6 +135,9 @@ export const LOCATION_HEADER = "Location";
 export const LOCATION_DESCRIPTION =
   "Pssst we're conveniently located just across the Hot Pools!";
 
+export const GOOGLE_MAPS_EMBED_URL =
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2940.525757186492!2d172.8273702760544!3d-42.52288517117818!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6d306303863472c9%3A0x99c0713021842c4b!2sHanmer%20Springs%20Foodway!5e0!3m2!1sen!2snz!4v1718272202335!5m2!1sen!2snz";
+
 export const ADDRESS = "45 Amuri Avenue, Hanmer Springs 7334";
 export const OPENING_HOURS = "Open Mon - Sat: 9 am - 8 pm";
 
@@ -136,11 +147,11 @@ export const PHONE_NUMBER = "021 086 727 93";
 
 export const COPYRIGHT_TEXT = "Hanmer Foodway 2024.";
 
-export const TERMS_AND_CONDITIONS_URL = "/terms_and_conditions/";
 export const TERMS_AND_CONDITIONS_TEXT = "Terms & Conditions";
+export const TERMS_AND_CONDITIONS_URL = "/terms_and_conditions/";
 
-export const PRIVACY_POLICY_URL = "/privacy_policy/";
 export const PRIVACY_POLICY_TEXT = "Privacy Policy";
+export const PRIVACY_POLICY_URL = "/privacy_policy/";
 
-export const ORDERING_SYSTEM_ADMIN_URL = "https://admin.sipocloudpos.com";
 export const ORDERING_SYSTEM_ADMIN_TEXT = "Admin";
+export const ORDERING_SYSTEM_ADMIN_URL = "https://admin.sipocloudpos.com";

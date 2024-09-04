@@ -1,6 +1,10 @@
 import { GoogleAnalytics } from "@next/third-parties/google";
 import type { Metadata } from "next";
-import { WEBSITE_DESCRIPTION, WEBSITE_TITLE } from "./content";
+import {
+  GOOGLE_ANALYTICS_ID,
+  WEBSITE_DESCRIPTION,
+  WEBSITE_TITLE,
+} from "./content";
 import "./globals.css";
 import { PRIMARY_FONT } from "./lib/fonts";
 
@@ -9,16 +13,16 @@ export const metadata: Metadata = {
   description: WEBSITE_DESCRIPTION,
 };
 
-const RootLayout = ({
-  children,
-}: Readonly<{
+type RootLayoutProps = {
   children: React.ReactNode;
-}>) => {
+};
+
+const RootLayout = ({ children }: RootLayoutProps) => {
   return (
     <html lang="en">
       <body className={PRIMARY_FONT.className}>
         {children}
-        <GoogleAnalytics gaId="G-MVTNC9MC3X" />
+        <GoogleAnalytics gaId={GOOGLE_ANALYTICS_ID} />
       </body>
     </html>
   );
