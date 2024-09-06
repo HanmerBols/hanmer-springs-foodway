@@ -8,15 +8,14 @@ import {
 
 export const GOOGLE_ANALYTICS_ID = "G-MVTNC9MC3X";
 
-export const WEBSITE_TITLE = "Hanmer Springs Foodway";
-export const WEBSITE_DESCRIPTION = "Enjoy food your way";
+export const HANMER_SPRINGS_FOODWAY_NAME = "Hanmer Springs Foodway";
+export const HANMER_SPRINGS_FOODWAY_DESCRIPTION = "Enjoy food your way";
 
 export const AFFILIATES_INTRO_TEXT = "Right Next Door";
 export const HANMER_WOOLSHED_NAME = "Hanmer Woolshed";
 export const HANMER_WOOLSHED_URL = "https://hanmerwoolshed.co.nz/";
 
 export const LOGO_IMAGE_PATH = "/hanmer_springs_foodway_logo.png";
-export const LOGO_DESCRIPTION = "Hanmer Springs Foodway";
 
 export const WEEKLY_SALE_BUTTON_TEXT = "Weekly Sale!";
 export const WEEKLY_SALE_URL = "/weekly_sale/";

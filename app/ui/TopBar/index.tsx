@@ -1,7 +1,7 @@
 "use client";
 
 import {
-  LOGO_DESCRIPTION,
+  HANMER_SPRINGS_FOODWAY_NAME,
   LOGO_IMAGE_PATH,
   WEEKLY_SALE_URL,
 } from "@/app/content";
@@ -54,7 +54,7 @@ const LogoImage = () => {
   return (
     <Image
       src={LOGO_IMAGE_PATH}
-      alt={LOGO_DESCRIPTION}
+      alt={HANMER_SPRINGS_FOODWAY_NAME}
       width={178}
       height={height}
       className={`${styles.logo} ${desktopOrMobileStyles}`}
