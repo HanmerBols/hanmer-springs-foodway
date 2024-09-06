@@ -8,13 +8,13 @@
 .footer.desktop {
   gap: 24px;
   width: calc(100% - 160px);
-  padding: 80px;
+  padding: 60px;
   font-size: 16px;
 }
 .footer.mobile {
   gap: 20px;
   width: calc(100% - 40px);
-  padding: 40px 20px 140px 20px;
+  padding: 40px 20px 120px 20px;
   font-size: 14px;
 }
 

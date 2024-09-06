@@ -2,6 +2,7 @@
 
 import {
   HANMER_SPRINGS_FOODWAY_NAME,
+  HOME_URL,
   LOGO_IMAGE_PATH,
   WEEKLY_SALE_URL,
 } from "@/app/content";
@@ -33,10 +34,10 @@ export default TopBar;
 const Logo = () => {
   const pathname = usePathname();
 
-  return pathname === "/" ? (
+  return pathname === HOME_URL ? (
     <LogoImage />
   ) : (
-    <Link href="/">
+    <Link href={HOME_URL}>
       <LogoImage />
     </Link>
   );

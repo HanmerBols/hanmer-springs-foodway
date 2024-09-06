@@ -391,6 +391,11 @@
   border-radius: 12px;
   border: 3px solid var(--neutral-300);
   background: white;
+
+  &:hover {
+    border: 3px solid #fb5b53;
+    box-shadow: 0px 4px 20px 4px rgba(60, 37, 32, 0.08);
+  }
 }
 .cart_button.desktop {
   width: 120px;
@@ -527,4 +532,30 @@
 }
 .enquiries.mobile {
   font-size: 14px;
+}
+
+.not_found_text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+.not_found_text.desktop {
+  height: calc(100vh - 420px);
+}
+.not_found_text.mobile {
+  height: calc(100vh - 360px);
+}
+
+.return_home_button {
+  padding: 8px 40px;
+  border-radius: 12px;
+  border: 3px solid var(--neutral-300);
+  background: white;
+
+  &:hover {
+    border: 3px solid #fb5b53;
+    box-shadow: 0px 4px 20px 4px rgba(60, 37, 32, 0.08);
+  }
 }

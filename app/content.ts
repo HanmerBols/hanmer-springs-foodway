@@ -16,9 +16,10 @@ export const HANMER_WOOLSHED_NAME = "Hanmer Woolshed";
 export const HANMER_WOOLSHED_URL = "https://hanmerwoolshed.co.nz/";
 
 export const LOGO_IMAGE_PATH = "/hanmer_springs_foodway_logo.png";
+export const HOME_URL = "/";
 
 export const WEEKLY_SALE_BUTTON_TEXT = "Weekly Sale!";
-export const WEEKLY_SALE_URL = "/weekly_sale/";
+export const WEEKLY_SALE_URL = "/weekly_sale";
 
 export const ORDER_BUTTON_TEXT = "Order Now";
 export const ORDERING_SYSTEM_URL = "https://order.sipocloudpos.com/hsfoodway";
@@ -49,10 +50,10 @@ export const CATEGORY_CLASS_NAMES: CategoryClassNames = {
 };
 
 export const CATEGORY_PATHS: CategoryPaths = {
-  Noodles: "/noodles/",
-  Bols: "/bols/",
-  "Quick Bites": "/quick_bites/",
-  "Groceries & Snacks": "/groceries_and_snacks/",
+  Noodles: "/noodles",
+  Bols: "/bols",
+  "Quick Bites": "/quick_bites",
+  "Groceries & Snacks": "/groceries_and_snacks",
 };
 
 export const DAILY_SPECIALS_HEADER = "Today's Special";
@@ -147,10 +148,15 @@ export const PHONE_NUMBER = "021 086 727 93";
 export const COPYRIGHT_TEXT = "Hanmer Foodway 2024.";
 
 export const TERMS_AND_CONDITIONS_TEXT = "Terms & Conditions";
-export const TERMS_AND_CONDITIONS_URL = "/terms_and_conditions/";
+export const TERMS_AND_CONDITIONS_URL = "/terms_and_conditions";
 
 export const PRIVACY_POLICY_TEXT = "Privacy Policy";
-export const PRIVACY_POLICY_URL = "/privacy_policy/";
+export const PRIVACY_POLICY_URL = "/privacy_policy";
 
 export const ORDERING_SYSTEM_ADMIN_TEXT = "Admin";
 export const ORDERING_SYSTEM_ADMIN_URL = "https://admin.sipocloudpos.com";
+
+export const NOT_FOUND_ERROR_TITLE = "404 Error";
+export const NOT_FOUND_ERROR_DESCRIPTION =
+  "Unable to find what you are looking for";
+export const RETURN_HOME_TEXT = "Back to home";
