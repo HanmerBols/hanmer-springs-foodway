@@ -33,7 +33,7 @@ export const VIDEO_NOT_SUPPORTED_TEXT =
   "Your browser does not support the videos.";
 
 export const INTRO_FIRST_LINE = "Welcome to your";
-export const INTRO_SECOND_LINE = "One Stop Convenience Shop";
+export const INTRO_SECOND_LINE = "two Stop Convenience Shop";
 
 export const CATEGORIES: Category[] = [
   "Noodles",
