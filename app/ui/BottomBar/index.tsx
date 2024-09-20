@@ -9,7 +9,7 @@ const BottomBar = () => {
 
   return (
     <div className={styles.bottom_bar}>
-      {pathname === WEEKLY_SALE_URL ? <></> : <WeeklySaleButton />}
+      {pathname.startsWith(WEEKLY_SALE_URL) ? <></> : <WeeklySaleButton />}
       <OrderButton />
     </div>
   );

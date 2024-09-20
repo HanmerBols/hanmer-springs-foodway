@@ -1,8 +1,5 @@
-export type Category =
-  | "Noodles"
-  | "Bols"
-  | "Quick Bites"
-  | "Groceries & Snacks";
+export type Category = "Boba Drinks" | "Noodles" | "Quick Bites" | "Snacks";
+// | "Bols";
 
 export type CategoryClassNames = {
   [category in Category]: string;

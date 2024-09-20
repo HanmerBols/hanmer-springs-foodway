@@ -36,24 +36,29 @@ export const INTRO_FIRST_LINE = "Welcome to your";
 export const INTRO_SECOND_LINE = "One Stop Convenience Shop";
 
 export const CATEGORIES: Category[] = [
+  "Boba Drinks",
   "Noodles",
-  "Bols",
   "Quick Bites",
-  "Groceries & Snacks",
+  "Snacks",
+  // "Bols",
 ];
 
 export const CATEGORY_CLASS_NAMES: CategoryClassNames = {
+  "Boba Drinks": "boba_drinks",
   Noodles: "noodles",
-  Bols: "bols",
   "Quick Bites": "quick_bites",
-  "Groceries & Snacks": "groceries_and_snacks",
+  Snacks: "snacks",
+  // Bols: "bols",
 };
 
+const ONLINE_ORDERING_SYSTEM_URL = "https://order.sipocloudpos.com/hsfoodway";
+
 export const CATEGORY_PATHS: CategoryPaths = {
-  Noodles: "/noodles",
-  Bols: "/bols",
-  "Quick Bites": "/quick_bites",
-  "Groceries & Snacks": "/groceries_and_snacks",
+  "Boba Drinks": `${ONLINE_ORDERING_SYSTEM_URL}/#bobadrinks`,
+  Noodles: `${ONLINE_ORDERING_SYSTEM_URL}/#noodles`,
+  "Quick Bites": `${ONLINE_ORDERING_SYSTEM_URL}/#quickbites`,
+  Snacks: `${ONLINE_ORDERING_SYSTEM_URL}/#snacks`,
+  // Bols: "/bols",
 };
 
 export const DAILY_SPECIALS_HEADER = "Today's Special";

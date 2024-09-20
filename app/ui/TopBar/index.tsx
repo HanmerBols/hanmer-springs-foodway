@@ -68,7 +68,7 @@ const Buttons = () => {
 
   return (
     <div className={styles.buttons}>
-      {pathname === WEEKLY_SALE_URL ? <></> : <WeeklySaleButton />}
+      {pathname.startsWith(WEEKLY_SALE_URL) ? <></> : <WeeklySaleButton />}
       <OrderButton />
     </div>
   );

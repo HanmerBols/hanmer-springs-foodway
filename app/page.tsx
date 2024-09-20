@@ -66,7 +66,7 @@ const LandingPage = () => {
         </Introduction>
 
         <Categories />
-        <DailySpecials />
+        {/* <DailySpecials /> */}
         <Location />
       </Content>
       <Footer />
@@ -147,6 +147,7 @@ const Categories = () => {
       {CATEGORIES.map((category) => (
         <Link
           key={category}
+          target="_blank"
           href={CATEGORY_PATHS[category]}
           className={`${styles.category} ${desktopOrMobileStyles} ${styles[CATEGORY_CLASS_NAMES[category]]}`}
         >

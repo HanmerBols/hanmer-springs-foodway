@@ -119,22 +119,26 @@
   width: 172px;
   height: 172px;
 }
+.boba_drinks {
+  background: url(/landing_page/categories/boba_drinks.png) lightgray 50% /
+    cover no-repeat;
+}
 .noodles {
   background: url(/landing_page/categories/noodles.png) lightgray 50% / cover
-    no-repeat;
-}
-.bols {
-  background: url(/landing_page/categories/bols.png) lightgray 50% / cover
     no-repeat;
 }
 .quick_bites {
   background: url(/landing_page/categories/quick_bites.png) lightgray 50% /
     cover no-repeat;
 }
-.groceries_and_snacks {
-  background: url(/landing_page/categories/groceries_and_snacks.png) lightgray
-    50% / cover no-repeat;
+.snacks {
+  background: url(/landing_page/categories/snacks.png) lightgray 50% / cover
+    no-repeat;
 }
+/* .bols {
+  background: url(/landing_page/categories/bols.png) lightgray 50% / cover
+    no-repeat;
+} */
 
 .category_text {
   display: flex;
