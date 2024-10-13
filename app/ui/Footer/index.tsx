@@ -1,5 +1,9 @@
 import {
+  BUILT_BY_TEXT,
+  BUILT_BY_URL,
   COPYRIGHT_TEXT,
+  DESIGNED_BY_TEXT,
+  DESIGNED_BY_URL,
   ORDERING_SYSTEM_ADMIN_TEXT,
   ORDERING_SYSTEM_ADMIN_URL,
   PRIVACY_POLICY_TEXT,
@@ -20,7 +24,8 @@ const Footer = () => {
   return (
     <footer className={`${styles.footer} ${desktopOrMobileStyles}`}>
       <Copyright />
-      <Footnotes />
+      <FootnotesFirstRow />
+      <FootnotesSecondRow />
     </footer>
   );
 };
@@ -35,7 +40,7 @@ const Copyright = () => {
   );
 };
 
-const Footnotes = () => {
+const FootnotesFirstRow = () => {
   const isMobile = useMobileDetection();
   const desktopOrMobileStyles = isMobile ? styles.mobile : styles.desktop;
 
@@ -55,6 +60,23 @@ const Footnotes = () => {
         target="_blank"
       >
         {ORDERING_SYSTEM_ADMIN_TEXT}
+      </Link>
+    </div>
+  );
+};
+
+const FootnotesSecondRow = () => {
+  const isMobile = useMobileDetection();
+  const desktopOrMobileStyles = isMobile ? styles.mobile : styles.desktop;
+
+  return (
+    <div className={`${styles.footnotes} ${desktopOrMobileStyles}`}>
+      <Link className={styles.footnote} href={DESIGNED_BY_URL} target="_blank">
+        {DESIGNED_BY_TEXT}
+      </Link>
+      •
+      <Link className={styles.footnote} href={BUILT_BY_URL} target="_blank">
+        {BUILT_BY_TEXT}
       </Link>
     </div>
   );

@@ -161,6 +161,12 @@ export const PRIVACY_POLICY_URL = "/privacy_policy";
 export const ORDERING_SYSTEM_ADMIN_TEXT = "Admin";
 export const ORDERING_SYSTEM_ADMIN_URL = "https://admin.sipocloudpos.com";
 
+export const DESIGNED_BY_TEXT = "Designed by Jeanette Ngo";
+export const DESIGNED_BY_URL = "https://jeanettengo.com";
+
+export const BUILT_BY_TEXT = "Built by Jason Ngo";
+export const BUILT_BY_URL = "https://njhjason.com";
+
 export const NOT_FOUND_ERROR_TITLE = "404 Error";
 export const NOT_FOUND_ERROR_DESCRIPTION =
   "Unable to find what you are looking for";
