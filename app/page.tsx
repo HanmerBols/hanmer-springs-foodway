@@ -66,7 +66,7 @@ const LandingPage = () => {
         </Introduction>
 
         <Categories />
-        {/* <DailySpecials /> */}
+        <DailySpecials />
         <Location />
       </Content>
       <Footer />
